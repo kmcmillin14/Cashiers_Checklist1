@@ -4,7 +4,7 @@ const CONFIG = {
     GOOGLE_SHEETS_URL: 'YOUR_GOOGLE_SHEETS_WEB_APP_URL_HERE', // Replace with actual URL
     EMAILJS: {
         SERVICE_ID: 'service_fcb3jnj',
-        TEMPLATE_ID: 'template_d9gl6qo', 
+        TEMPLATE_ID: 'template_bikg09l', 
         PUBLIC_KEY: 'LYsfhUe8MvlOQqsTq'
     }
 };
