@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McMillin Cashiers House - Guest Log</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="nav-tabs">
+            <button id="openingTab" class="nav-tab active" onclick="showSection('opening')">Opening Checklist</button>
+            <button id="closingTab" class="nav-tab" onclick="showSection('closing')">Closing Checklist</button>
+        </nav>
+
+        <div id="openingSection" class="section active">
+            <header>
+                <h1>McMillin Cashiers House</h1>
+                <p>Opening Checklist</p>
+            </header>
+            
+            <div class="form-container-single">
+                <div class="form-section">
+                    <form id="openingForm">
+                        <div class="form-group">
+                            <label for="openingName">Your Name:</label>
+                            <input type="text" id="openingName" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="openingTime">Opening Time:</label>
+                            <input type="datetime-local" id="openingTime" name="timestamp" required>
+                        </div>
+                        
+                        <div class="guests-section">
+                            <h4>Guest Information</h4>
+                            <div id="openingGuestList">
+                                <div class="guest-entry">
+                                    <div class="guest-inputs">
+                                        <input type="text" placeholder="Guest Name" class="guest-name">
+                                        <button type="button" class="remove-guest" onclick="removeGuest(this)">×</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="add-guest-btn" onclick="addGuest('opening')">+ Add Guest</button>
+                        </div>
+                    
+                    <div class="checklist-section">
+                        <h3>Opening Tasks</h3>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="check1" name="checklist" value="Check all rooms and closets for anything unusual">
+                            <label for="check1">Check all rooms and closets for anything unusual; leaks, dead bugs etc.</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="check2" name="checklist" value="Verify outside faucets are off">
+                            <label for="check2">Make sure the outside faucets on the front and right side are turned to the off position</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="check3" name="checklist" value="Turn on water at metal boxes">
+                            <label for="check3">Turn on water: Go down hill, lift first metal box lid, turn valve ¼ turn counterclockwise</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="check4" name="checklist" value="Turn on breakers with red dots">
+                            <label for="check4">Go to basement bedroom closet, turn on all breakers with red dots</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="check5" name="checklist" value="Set thermostat">
+                            <label for="check5">Set thermostat: no higher than 67°F (cold) / no lower than 72°F (warm)</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="check6" name="checklist" value="Start washing machine">
+                            <label for="check6">Put all towels, washcloths, dishcloths in washer and start it</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="check7" name="checklist" value="Set clocks">
+                            <label for="check7">Set clocks on stove and microwave if incorrect time</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="check8" name="checklist" value="Start ice maker">
+                            <label for="check8">Lower ice maker bar, check frozen ice cubes in freezer door mug</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="check9" name="checklist" value="Clean porch furniture">
+                            <label for="check9">Wipe down porch furniture with wet cloth and Murphy's oil soap</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="check10" name="checklist" value="Place cushions">
+                            <label for="check10">Take entry porch furniture cushion from guest bedroom to porch</label>
+                        </div>
+                    </div>
+                    
+                    <div class="comments-box">
+                        <label for="openingComments">Comments/Notes:</label>
+                        <textarea id="openingComments" name="comments" rows="4" placeholder="Any issues, observations, or notes during opening..."></textarea>
+                    </div>
+                    
+                        <button type="submit" class="btn btn-primary">Complete Opening</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="closingSection" class="section">
+            <header>
+                <h1>McMillin Cashiers House</h1>
+                <p>Closing Checklist</p>
+            </header>
+            
+            <div class="form-container-single">
+                <div class="form-section">
+                    <form id="closingForm">
+                        <div class="form-group">
+                            <label for="closingName">Your Name:</label>
+                            <input type="text" id="closingName" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="closingTime">Closing Time:</label>
+                            <input type="datetime-local" id="closingTime" name="timestamp" required>
+                        </div>
+                        
+                        <div class="guests-section">
+                            <h4>Guest Information</h4>
+                            <div id="closingGuestList">
+                                <div class="guest-entry">
+                                    <div class="guest-inputs">
+                                        <input type="text" placeholder="Guest Name" class="guest-name">
+                                        <button type="button" class="remove-guest" onclick="removeGuest(this)">×</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="add-guest-btn" onclick="addGuest('closing')">+ Add Guest</button>
+                        </div>
+                    
+                    <div class="checklist-section">
+                        <h3>Closing Tasks</h3>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="close1" name="checklist" value="Put used sheets in washer">
+                            <label for="close1">Put used sheets in washer - DO NOT START, leave doors open</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="close2" name="checklist" value="Put fresh sheets on beds">
+                            <label for="close2">Put fresh sheets on both beds</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="close3" name="checklist" value="Hang wet linens">
+                            <label for="close3">Hang all wet washcloths, towels, dishcloths on bathroom hooks</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="close4" name="checklist" value="Bring in cushions">
+                            <label for="close4">Bring all outside cushions in and put them in bedrooms</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="close5" name="checklist" value="Move porch furniture">
+                            <label for="close5">Move all porch furniture as close to house as possible</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="close6" name="checklist" value="Cover grill">
+                            <label for="close6">Place cover over grill</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="close7" name="checklist" value="Lock sliding doors">
+                            <label for="close7">Close and lock both sliding glass doors</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="close8" name="checklist" value="Open drapes">
+                            <label for="close8">Open drapes in master bedroom</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="close9" name="checklist" value="Open doors">
+                            <label for="close9">Open all folding closet doors, master bath shower door, guest bath shower curtain</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="close10" name="checklist" value="Wash dishes">
+                            <label for="close10">Wash and put away all pots, pans, dishes, flatware</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="close11" name="checklist" value="Ice maker">
+                            <label for="close11">Lift ice maker bar, place ice cubes in freezer door mug</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="close12" name="checklist" value="Unplug toaster">
+                            <label for="close12">Unplug toaster</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="close13" name="checklist" value="Check toilets">
+                            <label for="close13">Lift toilet seats, make sure toilets are flushed</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="close14" name="checklist" value="Turn off breakers">
+                            <label for="close14">In master bedroom utility closet, turn off all breakers with red dots</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="close15" name="checklist" value="Turn off water">
+                            <label for="close15">Go to metal boxes, turn valve ¼ turn, drain spicket completely</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="close16" name="checklist" value="Turn off lights">
+                            <label for="close16">Turn off all lights and fans</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="close17" name="checklist" value="Take out trash">
+                            <label for="close17">Take out trash and any perishable food</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="close18" name="checklist" value="Set thermostat">
+                            <label for="close18">WARM: Set to 77°F | COLD: Set to 53°F, turn off radiant heat & fireplace pilot</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="close19" name="checklist" value="Open cabinet doors">
+                            <label for="close19">COLD WEATHER: Open all cabinet doors under sinks</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="close20" name="checklist" value="Lock front door">
+                            <label for="close20">Close front door and make sure it's locked</label>
+                        </div>
+                    </div>
+                    
+                    <div class="comments-box">
+                        <label for="closingComments">Comments/Notes:</label>
+                        <textarea id="closingComments" name="comments" rows="4" placeholder="Any issues, observations, or notes during closing..."></textarea>
+                    </div>
+                    
+                        <button type="submit" class="btn btn-secondary">Complete Closing</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
