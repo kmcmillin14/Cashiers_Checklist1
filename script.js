@@ -1,7 +1,7 @@
 // Configuration - Replace with your EmailJS credentials
 const CONFIG = {
     EMAIL_RECIPIENTS: ['kpm0027@auburn.edu', 'eyedr90@aol.com', 'idr90@aol.com'],
-    GOOGLE_SHEETS_URL: 'https://script.google.com/macros/s/AKfycbyRwaSdT32CxNqsVlMOOLI02U9ziphF_l8P4gmaS3tBJsMPTT6bjEVIQhEbrhu-cEqp/exec',
+    GOOGLE_SHEETS_URL: 'https://script.google.com/macros/s/AKfycbyC5BavtXhorSpNT6Ra0Jbq7iN53f01frxXEtbZrVikV6c42nBM4dWb5ohYenxEk_-d/exec',
     EMAILJS: {
         SERVICE_ID: 'service_fcb3jnj',
         TEMPLATE_ID: 'template_bikg09l', 
@@ -141,26 +141,51 @@ async function processSubmission(data, form) {
     }
 }
 
-// Send data to Google Sheets
+// Send data to Google Sheets using form submission method
 async function sendToGoogleSheets(data) {
     try {
-        const response = await fetch(CONFIG.GOOGLE_SHEETS_URL, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data)
-        });
+        // Create a temporary form for submission
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = CONFIG.GOOGLE_SHEETS_URL;
+        form.style.display = 'none';
         
-        if (!response.ok) {
-            throw new Error('Failed to save to Google Sheets');
+        // Add data as form fields
+        const formData = new FormData();
+        formData.append('data', JSON.stringify(data));
+        
+        // Convert FormData to form elements
+        for (let [key, value] of formData.entries()) {
+            const input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = key;
+            input.value = value;
+            form.appendChild(input);
         }
         
-        console.log('Data successfully saved to Google Sheets');
-        return response.json();
+        document.body.appendChild(form);
+        
+        // Submit the form in a hidden iframe
+        const iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        iframe.name = 'hidden_iframe';
+        document.body.appendChild(iframe);
+        
+        form.target = 'hidden_iframe';
+        form.submit();
+        
+        // Clean up
+        setTimeout(() => {
+            document.body.removeChild(form);
+            document.body.removeChild(iframe);
+        }, 1000);
+        
+        console.log('Data sent to Google Sheets');
+        return Promise.resolve({success: true});
     } catch (error) {
         console.error('Error saving to Google Sheets:', error);
-        throw error;
+        // Don't throw error - continue with email even if sheets fails
+        return Promise.resolve({success: false, error: error.message});
     }
 }
 
