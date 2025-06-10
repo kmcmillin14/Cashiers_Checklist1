@@ -1,7 +1,7 @@
 // Configuration - Replace with your EmailJS credentials
 const CONFIG = {
     EMAIL_RECIPIENTS: ['kpm0027@auburn.edu', 'eyedr90@aol.com', 'idr90@aol.com'],
-    GOOGLE_SHEETS_URL: 'https://script.google.com/macros/s/AKfycbyC5BavtXhorSpNT6Ra0Jbq7iN53f01frxXEtbZrVikV6c42nBM4dWb5ohYenxEk_-d/exec',
+    GOOGLE_SHEETS_URL: 'https://script.google.com/macros/s/AKfycbyQdGKEVAxeGbK4dcmDzkqSAmWL3qfSt53heyp_pkvFPSaiozSv1n5bgznsZP_6H9JK/exec',
     EMAILJS: {
         SERVICE_ID: 'service_fcb3jnj',
         TEMPLATE_ID: 'template_bikg09l', 
