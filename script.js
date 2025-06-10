@@ -1,7 +1,7 @@
 // Configuration - Replace with your EmailJS credentials
 const CONFIG = {
     EMAIL_RECIPIENTS: ['kpm0027@auburn.edu', 'eyedr90@aol.com', 'idr90@aol.com'],
-    GOOGLE_SHEETS_URL: 'YOUR_GOOGLE_SHEETS_WEB_APP_URL_HERE', // Replace with actual URL
+    GOOGLE_SHEETS_URL: 'https://script.google.com/macros/s/AKfycbyRwaSdT32CxNqsVlMOOLI02U9ziphF_l8P4gmaS3tBJsMPTT6bjEVIQhEbrhu-cEqp/exec',
     EMAILJS: {
         SERVICE_ID: 'service_fcb3jnj',
         TEMPLATE_ID: 'template_bikg09l', 
@@ -143,26 +143,25 @@ async function processSubmission(data, form) {
 
 // Send data to Google Sheets
 async function sendToGoogleSheets(data) {
-    // Note: This requires setting up a Google Apps Script web app
-    // For now, we'll simulate the request
-    if (CONFIG.GOOGLE_SHEETS_URL === 'YOUR_GOOGLE_SHEETS_WEB_APP_URL_HERE') {
-        console.log('Google Sheets integration not configured. Data would be sent:', data);
-        return Promise.resolve();
+    try {
+        const response = await fetch(CONFIG.GOOGLE_SHEETS_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        });
+        
+        if (!response.ok) {
+            throw new Error('Failed to save to Google Sheets');
+        }
+        
+        console.log('Data successfully saved to Google Sheets');
+        return response.json();
+    } catch (error) {
+        console.error('Error saving to Google Sheets:', error);
+        throw error;
     }
-    
-    const response = await fetch(CONFIG.GOOGLE_SHEETS_URL, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data)
-    });
-    
-    if (!response.ok) {
-        throw new Error('Failed to save to Google Sheets');
-    }
-    
-    return response.json();
 }
 
 // Send email notification using EmailJS
