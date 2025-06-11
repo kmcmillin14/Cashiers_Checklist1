@@ -46,45 +46,51 @@
                     
                     <div class="checklist-section">
                         <h3>Opening Tasks</h3>
-                        <div class="checklist-item">
-                            <input type="checkbox" id="check1" name="checklist" value="Check all rooms and closets for anything unusual">
-                            <label for="check1">Check all rooms and closets for anything unusual; leaks, dead bugs etc.</label>
+                        <div class="bear-warning">
+                            <strong>⚠️ IMPORTANT: DO NOT LEAVE FOOD OR FOOD-RELATED ITEMS IN VEHICLE. BEARS WILL BREAK IN.</strong>
                         </div>
                         <div class="checklist-item">
-                            <input type="checkbox" id="check2" name="checklist" value="Verify outside faucets are off">
-                            <label for="check2">Make sure the outside faucets on the front and right side are turned to the off position</label>
+                            <input type="checkbox" id="check1" name="checklist" value="Unlock Front Door: Code (2324 ✓)">
+                            <label for="check1"><strong>1.</strong> Unlock Front Door: Code (2324 ✓)</label>
                         </div>
                         <div class="checklist-item">
-                            <input type="checkbox" id="check3" name="checklist" value="Turn on water at metal boxes">
-                            <label for="check3">Turn on water: Go down hill, lift first metal box lid, turn valve ¼ turn counterclockwise</label>
+                            <input type="checkbox" id="check2" name="checklist" value="Check all rooms and closets for anything unusual; leaks, dead bugs etc.">
+                            <label for="check2"><strong>2.</strong> Check all rooms and closets for anything unusual; leaks, dead bugs etc.</label>
                         </div>
                         <div class="checklist-item">
-                            <input type="checkbox" id="check4" name="checklist" value="Turn on breakers with red dots">
-                            <label for="check4">Go to basement bedroom closet, turn on all breakers with red dots</label>
+                            <input type="checkbox" id="check3" name="checklist" value="Turn on water: Go down hill, lift first metal box lid, turn valve ¼ turn counterclockwise">
+                            <label for="check3"><strong>3.</strong> Turn on water: Go down hill, lift first metal box lid, turn valve ¼ turn counterclockwise<br><span class="sub-instruction">• If the spigot on the house flows with water, turn it off.</span></label>
                         </div>
                         <div class="checklist-item">
-                            <input type="checkbox" id="check5" name="checklist" value="Set thermostat">
-                            <label for="check5">Set thermostat: no higher than 67°F (cold) / no lower than 72°F (warm)</label>
+                            <input type="checkbox" id="check4" name="checklist" value="Go to lower bedroom closet next to the stairs, turn on all breakers with red dots">
+                            <label for="check4"><strong>4.</strong> Go to lower bedroom closet next to the stairs, turn on all breakers with red dots</label>
                         </div>
                         <div class="checklist-item">
-                            <input type="checkbox" id="check6" name="checklist" value="Start washing machine">
-                            <label for="check6">Put all towels, washcloths, dishcloths in washer and start it</label>
+                            <input type="checkbox" id="check6" name="checklist" value="Put all towels, washcloths, dishcloths in washer and start it">
+                            <label for="check6"><strong>6.</strong> Put all towels, washcloths, dishcloths in washer and start it<br><span class="sub-instruction">• Disregard if there isn't dirty laundry in the basket near the washer / dryer or bathrooms</span></label>
                         </div>
                         <div class="checklist-item">
-                            <input type="checkbox" id="check7" name="checklist" value="Set clocks">
-                            <label for="check7">Set clocks on stove and microwave if incorrect time</label>
+                            <input type="checkbox" id="check7" name="checklist" value="Set clocks on stove and microwave if incorrect time">
+                            <label for="check7"><strong>7.</strong> Set clocks on stove and microwave if incorrect time</label>
                         </div>
                         <div class="checklist-item">
-                            <input type="checkbox" id="check8" name="checklist" value="Start ice maker">
-                            <label for="check8">Lower ice maker bar, check frozen ice cubes in freezer door mug</label>
+                            <input type="checkbox" id="check8" name="checklist" value="Lower ice maker bar">
+                            <label for="check8"><strong>8.</strong> Lower ice maker bar</label>
                         </div>
                         <div class="checklist-item">
-                            <input type="checkbox" id="check9" name="checklist" value="Clean porch furniture">
-                            <label for="check9">Wipe down porch furniture with wet cloth and Murphy's oil soap</label>
+                            <input type="checkbox" id="check9" name="checklist" value="Wipe down porch furniture with wet cloth and Murphy's oil soap">
+                            <label for="check9"><strong>9.</strong> Wipe down porch furniture with wet cloth and Murphy's oil soap<br><span class="sub-instruction">• If you plan on using the furniture<br>• Cleaning supplies underneath the kitchen sink</span></label>
                         </div>
                         <div class="checklist-item">
-                            <input type="checkbox" id="check10" name="checklist" value="Place cushions">
-                            <label for="check10">Take entry porch furniture cushion from guest bedroom to porch</label>
+                            <input type="checkbox" id="check10" name="checklist" value="Take entry porch furniture cushion from guest bedroom closet to porch">
+                            <label for="check10"><strong>10.</strong> Take entry porch furniture cushion from guest bedroom closet to porch<br><span class="sub-instruction">• If you plan on using the furniture</span></label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="check11" name="checklist" value="Thermostats (Separate System) - Main Level: Do not set AC lower than 70° F, Master Bedroom: White remote controls thermostat">
+                            <label for="check11"><strong>11.</strong> Thermostats (Separate System)<br><span class="sub-instruction">• Main Level: Do not set AC lower than 70° F<br>• Master Bedroom: White remote controls thermostat</span></label>
+                        </div>
+                        <div id="opening-completion-reminder" class="completion-reminder" style="display: none;">
+                            <strong>📋 Please complete all applicable checklist items before submitting.</strong>
                         </div>
                     </div>
                     
@@ -132,85 +138,83 @@
                     
                     <div class="checklist-section">
                         <h3>Closing Tasks</h3>
-                        <div class="checklist-item">
-                            <input type="checkbox" id="close1" name="checklist" value="Put used sheets in washer">
-                            <label for="close1">Put used sheets in washer - DO NOT START, leave doors open</label>
+                        <div class="enjoy-stay-message">
+                            <strong>🏠 We hope you enjoyed your stay. Please write a note in the book on the log table in the living room!</strong>
                         </div>
                         <div class="checklist-item">
-                            <input type="checkbox" id="close2" name="checklist" value="Put fresh sheets on beds">
-                            <label for="close2">Put fresh sheets on both beds</label>
+                            <input type="checkbox" id="close1" name="checklist" value="Put used sheets in washer - DO NOT START, leave washer / dryer doors open">
+                            <label for="close1"><strong>1.</strong> Put used sheets in washer - DO NOT START, leave washer / dryer doors open</label>
                         </div>
                         <div class="checklist-item">
-                            <input type="checkbox" id="close3" name="checklist" value="Hang wet linens">
-                            <label for="close3">Hang all wet washcloths, towels, dishcloths on bathroom hooks</label>
+                            <input type="checkbox" id="close2" name="checklist" value="Put fresh sheets on both beds">
+                            <label for="close2"><strong>2.</strong> Put fresh sheets on both beds<br><span class="sub-instruction">• Additional sheets located in dresser drawers per bedroom</span></label>
                         </div>
                         <div class="checklist-item">
-                            <input type="checkbox" id="close4" name="checklist" value="Bring in cushions">
-                            <label for="close4">Bring all outside cushions in and put them in bedrooms</label>
+                            <input type="checkbox" id="close3" name="checklist" value="Hang all wet washcloths, towels, dishcloths on bathroom hooks">
+                            <label for="close3"><strong>3.</strong> Hang all wet washcloths, towels, dishcloths on bathroom hooks<br><span class="sub-instruction">• Unless you wash and dry before departure</span></label>
                         </div>
                         <div class="checklist-item">
-                            <input type="checkbox" id="close5" name="checklist" value="Move porch furniture">
-                            <label for="close5">Move all porch furniture as close to house as possible</label>
+                            <input type="checkbox" id="close4" name="checklist" value="Bring all outside cushions in and put them in guest bedroom closet">
+                            <label for="close4"><strong>4.</strong> Bring all outside cushions in and put them in guest bedroom closet<br><span class="sub-instruction">• If applicable</span></label>
                         </div>
                         <div class="checklist-item">
-                            <input type="checkbox" id="close6" name="checklist" value="Cover grill">
-                            <label for="close6">Place cover over grill</label>
+                            <input type="checkbox" id="close6" name="checklist" value="Place cover over grill">
+                            <label for="close6"><strong>6.</strong> Place cover over grill<br><span class="sub-instruction">• If applicable</span></label>
                         </div>
                         <div class="checklist-item">
-                            <input type="checkbox" id="close7" name="checklist" value="Lock sliding doors">
-                            <label for="close7">Close and lock both sliding glass doors</label>
+                            <input type="checkbox" id="close7" name="checklist" value="Close and lock both sliding glass doors">
+                            <label for="close7"><strong>7.</strong> Close and lock both sliding glass doors</label>
                         </div>
                         <div class="checklist-item">
-                            <input type="checkbox" id="close8" name="checklist" value="Open drapes">
-                            <label for="close8">Open drapes in master bedroom</label>
+                            <input type="checkbox" id="close8" name="checklist" value="Open drapes in master bedroom">
+                            <label for="close8"><strong>8.</strong> Open drapes in master bedroom</label>
                         </div>
                         <div class="checklist-item">
-                            <input type="checkbox" id="close9" name="checklist" value="Open doors">
-                            <label for="close9">Open all folding closet doors, master bath shower door, guest bath shower curtain</label>
+                            <input type="checkbox" id="close9" name="checklist" value="Open all folding closet doors, master bath shower door, guest bath shower curtain">
+                            <label for="close9"><strong>9.</strong> Open all folding closet doors, master bath shower door, guest bath shower curtain</label>
                         </div>
                         <div class="checklist-item">
-                            <input type="checkbox" id="close10" name="checklist" value="Wash dishes">
-                            <label for="close10">Wash and put away all pots, pans, dishes, flatware</label>
+                            <input type="checkbox" id="close10" name="checklist" value="Wash and put away all pots, pans, dishes, flatware">
+                            <label for="close10"><strong>10.</strong> Wash and put away all pots, pans, dishes, flatware<br><span class="sub-instruction">• DO NOT run the dishwasher and leave because electric and water will be turned off</span></label>
                         </div>
                         <div class="checklist-item">
-                            <input type="checkbox" id="close11" name="checklist" value="Ice maker">
-                            <label for="close11">Lift ice maker bar, place ice cubes in freezer door mug</label>
+                            <input type="checkbox" id="close11" name="checklist" value="Thermostats (Separate System) - Main Level: In warm weather set AC to 80° F, In cold weather set heat to 55°F, Master Bedroom: Turn off and place remote on dresser underneath AC unit">
+                            <label for="close11"><strong>11.</strong> Thermostats (Separate System)<br><span class="sub-instruction">• Main Level: In warm weather set AC to 80° F, In cold weather set heat to 55°F<br>• Master Bedroom: Turn off and place remote on dresser underneath AC unit</span></label>
                         </div>
                         <div class="checklist-item">
-                            <input type="checkbox" id="close12" name="checklist" value="Unplug toaster">
-                            <label for="close12">Unplug toaster</label>
+                            <input type="checkbox" id="close12" name="checklist" value="Unplug toaster, coffee maker, and other small appliances">
+                            <label for="close12"><strong>12.</strong> Unplug toaster, coffee maker, and other small appliances</label>
                         </div>
                         <div class="checklist-item">
-                            <input type="checkbox" id="close13" name="checklist" value="Check toilets">
-                            <label for="close13">Lift toilet seats, make sure toilets are flushed</label>
+                            <input type="checkbox" id="close13" name="checklist" value="Lift toilet seats, make sure toilets are flushed">
+                            <label for="close13"><strong>13.</strong> Lift toilet seats, make sure toilets are flushed</label>
                         </div>
                         <div class="checklist-item">
-                            <input type="checkbox" id="close14" name="checklist" value="Turn off breakers">
-                            <label for="close14">In master bedroom utility closet, turn off all breakers with red dots</label>
+                            <input type="checkbox" id="close14" name="checklist" value="In master bedroom closet next to stairs, turn off all breakers with red dots">
+                            <label for="close14"><strong>14.</strong> In master bedroom closet next to stairs, turn off all breakers with red dots</label>
                         </div>
                         <div class="checklist-item">
-                            <input type="checkbox" id="close15" name="checklist" value="Turn off water">
-                            <label for="close15">Go to metal boxes, turn valve ¼ turn, drain spicket completely</label>
+                            <input type="checkbox" id="close15" name="checklist" value="Go to water turn off valve, valve ¼ turn to off position (sound will stop)">
+                            <label for="close15"><strong>15.</strong> Go to water turn off valve, valve ¼ turn to off position (sound will stop)<br><span class="sub-instruction">• Make sure the spigot is drained and in the off position</span></label>
                         </div>
                         <div class="checklist-item">
-                            <input type="checkbox" id="close16" name="checklist" value="Turn off lights">
-                            <label for="close16">Turn off all lights and fans</label>
+                            <input type="checkbox" id="close16" name="checklist" value="Turn off all lights and fans">
+                            <label for="close16"><strong>16.</strong> Turn off all lights and fans</label>
                         </div>
                         <div class="checklist-item">
-                            <input type="checkbox" id="close17" name="checklist" value="Take out trash">
-                            <label for="close17">Take out trash and any perishable food</label>
+                            <input type="checkbox" id="close17" name="checklist" value="Take out trash and any perishable food">
+                            <label for="close17"><strong>17.</strong> Take out trash and any perishable food<br><span class="sub-instruction">• Located near parking lot stairs</span></label>
                         </div>
                         <div class="checklist-item">
-                            <input type="checkbox" id="close18" name="checklist" value="Set thermostat">
-                            <label for="close18">WARM: Set to 77°F | COLD: Set to 53°F, turn off radiant heat & fireplace pilot</label>
+                            <input type="checkbox" id="close19" name="checklist" value="COLD WEATHER: Open all cabinet doors under sinks">
+                            <label for="close19"><strong>19.</strong> COLD WEATHER: Open all cabinet doors under sinks</label>
                         </div>
                         <div class="checklist-item">
-                            <input type="checkbox" id="close19" name="checklist" value="Open cabinet doors">
-                            <label for="close19">COLD WEATHER: Open all cabinet doors under sinks</label>
+                            <input type="checkbox" id="close20" name="checklist" value="Close front door and make sure it's locked">
+                            <label for="close20"><strong>20.</strong> Close front door and make sure it's locked</label>
                         </div>
-                        <div class="checklist-item">
-                            <input type="checkbox" id="close20" name="checklist" value="Lock front door">
-                            <label for="close20">Close front door and make sure it's locked</label>
+                        <div id="closing-completion-reminder" class="completion-reminder" style="display: none;">
+                            <strong>📋 Please complete all applicable checklist items before submitting.</strong>
                         </div>
                     </div>
                     

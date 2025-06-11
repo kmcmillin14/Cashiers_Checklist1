@@ -331,6 +331,45 @@ textarea:focus {
     background: #218838;
 }
 
+/* Warning and reminder styles */
+.bear-warning {
+    background: #fff3cd;
+    border: 2px solid #ffc107;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #856404;
+}
+
+.enjoy-stay-message {
+    background: #d1ecf1;
+    border: 2px solid #17a2b8;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #0c5460;
+}
+
+.completion-reminder {
+    background: #d1ecf1;
+    border: 2px solid #17a2b8;
+    border-radius: 6px;
+    padding: 15px;
+    margin-top: 20px;
+    text-align: center;
+    color: #0c5460;
+}
+
+.sub-instruction {
+    font-size: 0.9rem;
+    color: #6c757d;
+    font-style: italic;
+    margin-top: 5px;
+    display: block;
+}
+
 .success-message {
     background: #d4edda;
     border: 1px solid #c3e6cb;
