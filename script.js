@@ -1,6 +1,7 @@
+  // Configuration - Replace with your EmailJS credentials
   const CONFIG = {
       EMAIL_RECIPIENTS: ['kpm0027@auburn.edu', 'eyedr90@aol.com', 'idr90@aol.com'],
-      GOOGLE_SHEETS_URL: 'https://script.google.com/macros/s/AKfycbyQdGKEVAxeGbK4dcmDzkqSAmWL3qfSt53heyp_pkvFP SaiozSv1n5bgznsZP_6H9JK/exec',
+      GOOGLE_SHEETS_URL: 'https://script.google.com/macros/s/AKfycbyQdGKEVAxeGbK4dcmDzkqSAmWL3qfSt53heyp_pkvFPSaiozSv1n5bgznsZP_6H9JK/exec',
       EMAILJS: {
           SERVICE_ID: 'service_fcb3jnj',
           TEMPLATE_ID: 'template_bikg09l',
@@ -67,16 +68,6 @@
       const formData = new FormData(event.target);
       const checkedItems = Array.from(formData.getAll('checklist'));
       const guests = getGuestData('opening');
-      const reminder = document.getElementById('opening-completion-reminder');
-
-      // Show reminder if not all tasks are completed, but still allow submission
-      if (checkedItems.length < 10) {
-          reminder.style.display = 'block';
-          reminder.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      } else {
-          // Hide reminder if it was showing
-          reminder.style.display = 'none';
-      }
 
       const data = {
           type: 'opening',
@@ -100,16 +91,6 @@
       const formData = new FormData(event.target);
       const checkedItems = Array.from(formData.getAll('checklist'));
       const guests = getGuestData('closing');
-      const reminder = document.getElementById('closing-completion-reminder');
-
-      // Show reminder if not all tasks are completed, but still allow submission
-      if (checkedItems.length < 18) {
-          reminder.style.display = 'block';
-          reminder.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      } else {
-          // Hide reminder if it was showing
-          reminder.style.display = 'none';
-      }
 
       const data = {
           type: 'closing',
@@ -413,4 +394,3 @@
          .setMimeType(ContentService.MimeType.JSON);
      }
   `);
-
