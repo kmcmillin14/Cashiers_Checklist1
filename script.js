@@ -68,6 +68,18 @@ async function handleOpeningSubmit(event) {
     const formData = new FormData(event.target);
     const checkedItems = Array.from(formData.getAll('checklist'));
     const guests = getGuestData('opening');
+    const reminder = document.getElementById('opening-completion-reminder');
+    
+    // Check if all tasks are completed
+    if (checkedItems.length < 11) {
+        // Show reminder and prevent submission
+        reminder.style.display = 'block';
+        reminder.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+    } else {
+        // Hide reminder if it was showing
+        reminder.style.display = 'none';
+    }
     
     const data = {
         type: 'opening',
@@ -75,7 +87,7 @@ async function handleOpeningSubmit(event) {
         timestamp: formData.get('timestamp'),
         checklist: checkedItems,
         completedTasks: checkedItems.length,
-        totalTasks: 10,
+        totalTasks: 11,
         comments: formData.get('comments'),
         guests: guests,
         guestCount: guests.length
@@ -91,6 +103,18 @@ async function handleClosingSubmit(event) {
     const formData = new FormData(event.target);
     const checkedItems = Array.from(formData.getAll('checklist'));
     const guests = getGuestData('closing');
+    const reminder = document.getElementById('closing-completion-reminder');
+    
+    // Check if all tasks are completed
+    if (checkedItems.length < 19) {
+        // Show reminder and prevent submission
+        reminder.style.display = 'block';
+        reminder.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+    } else {
+        // Hide reminder if it was showing
+        reminder.style.display = 'none';
+    }
     
     const data = {
         type: 'closing',
@@ -98,7 +122,7 @@ async function handleClosingSubmit(event) {
         timestamp: formData.get('timestamp'),
         checklist: checkedItems,
         completedTasks: checkedItems.length,
-        totalTasks: 20,
+        totalTasks: 19,
         comments: formData.get('comments'),
         guests: guests,
         guestCount: guests.length
